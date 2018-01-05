@@ -1,0 +1,17 @@
+$(document).ready(function(){
+  $.ajax({
+    type:"get",
+    url:"http://api.openchargemap.io/v2/poi/?output=json&countrycode=NL&maxresults=10",
+    success: function(data){
+    result="";
+    for(i in data){
+    result+="ID: "+data[i].ID+" // UUID: "+data[i].UUID+"<br>";
+    }
+    $("#list").html(result);
+    }
+  });
+});
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<div id="list">
+
+</div>
